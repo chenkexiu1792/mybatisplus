@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+*.iws
+*.iml
+*.ipr
+*.autosave
+*.user
+*.stash
+*.xls
+*.csv
+Makefile
+*tmp/
+target/
+*.class
+sec-config/
