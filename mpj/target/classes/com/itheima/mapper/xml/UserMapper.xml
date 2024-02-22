@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.UserDao">
+    <select id="getAll_2" resultType="map" parameterType="map">
+           select * from tbl_user
+		            LEFT JOIN tbl_order
+		            on tbl_user.id = tbl_order.user_id
+            where tbl_user.id =1
+    </select>
+
+    <select id="getById_self" resultType="map" parameterType="map">
+        select * from tbl_user
+		LEFT JOIN tbl_order
+		 on tbl_user.id = tbl_order.user_id
+         where 1=1
+        <if test="user_id != null">
+            and  tbl_user.id = 1 = #{user_id}
+        </if>
+    </select>
+
+    <!-- 更新自定义sql-->
+    <update id="updateUserByMyWrapper">
+        UPDATE tbl_user SET email = #{user.email} ${ew.customSqlSegment}
+    </update>
+
+    <select id="page" resultType="com.itheima.vo.UserOrderVO" >
+        select tbl_user.id,tbl_user.age,tbl_user.name,tbl_user.pwd, tbl_user.deleted,tbl_order.order_id,tbl_order.user_id	from tbl_user
+        LEFT JOIN tbl_order
+        on tbl_user.id = tbl_order.user_id
+    </select>
+
+    <!-- 传入map，返回map，并利用mybatis自动分页 -->
+    <select id="getID" resultType="java.util.Map" parameterType="map">
+          select tbl_user.id ,tbl_order.order_id from tbl_user
+		            LEFT JOIN tbl_order
+		            on tbl_user.id = tbl_order.user_id
+            where 1=1
+        <if test="map.id != null and map.id!=''">
+            and  tbl_user.id =#{map.id}
+        </if>
+        <if test="map.age != null and map.age!=''">
+            and  tbl_user.age =#{map.age,jdbcType=INTEGER}
+        </if>
+    </select>
+
+
+</mapper>
