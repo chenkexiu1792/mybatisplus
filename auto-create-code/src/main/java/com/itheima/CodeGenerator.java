@@ -1,5 +1,6 @@
 package com.itheima;
 
+import ch.qos.logback.core.CoreConstants;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -59,5 +60,6 @@ public class CodeGenerator {
         autoGenerator.setGlobalConfig(globalConfig);
         autoGenerator.setDataSource(dataSourceConfig);
         autoGenerator.execute();
+        System.out.println("test");
     }
 }
