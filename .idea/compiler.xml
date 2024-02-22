@@ -8,17 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="auto-create-code" />
+        <module name="common" />
         <module name="mpj (1)" />
         <module name="mpj" />
-        <module name="common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="auto-create-code" target="1.8" />
-      <module name="common" target="1.8" />
-      <module name="mpj" target="1.8" />
       <module name="mpj (1)" target="1.8" />
-      <module name="mybatisplus" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
