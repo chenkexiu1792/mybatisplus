@@ -45,7 +45,7 @@ public class CodeGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("tb_overhaul_plan_month");
+        strategy.setInclude("tb_suspend_status");
         strategy.setTablePrefix("tb_");
         strategy.setRestControllerStyle(true);//是否设置rest 风格
         strategy.setVersionFieldName("version");//乐观锁字段名

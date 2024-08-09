@@ -9,11 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="auto-create-code" />
         <module name="common" />
-        <module name="mpj (1)" />
-        <module name="mpj" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mpj" target="1.7" />
       <module name="mpj (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
