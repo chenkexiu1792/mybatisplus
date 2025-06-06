@@ -20,7 +20,7 @@ public class CodeGenerator {
         AutoGenerator autoGenerator = new AutoGenerator();
 
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setUrl("jdbc:mysql://192.168.134.189:33306/ora9a?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&allowMultiQueries=true&rewriteBatchedStatements=true&serverTimezone=Asia/Shanghai");
+        dataSourceConfig.setUrl("jdbc:mysql://192.168.134.189:33306/xjsite?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&allowMultiQueries=true&rewriteBatchedStatements=true&serverTimezone=Asia/Shanghai");
         dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
         dataSourceConfig.setUsername("root");
         dataSourceConfig.setPassword("rootroot");
@@ -45,8 +45,8 @@ public class CodeGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("tb_suspend_status");
-        strategy.setTablePrefix("tb_");
+        strategy.setInclude("xt_user");
+        //strategy.setTablePrefix("tb_");
         strategy.setRestControllerStyle(true);//是否设置rest 风格
         strategy.setVersionFieldName("version");//乐观锁字段名
         strategy.setLogicDeleteFieldName("deleted");//逻辑删除字段名
